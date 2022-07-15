@@ -8,4 +8,4 @@
 docker run dockerinaction/hello_world
 ```
 
-image.png
+01fig01_alt.jpg
