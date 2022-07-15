@@ -8,4 +8,5 @@
 docker run dockerinaction/hello_world
 ```
 
-01fig01_alt.jpg
+![01fig01_alt](https://user-images.githubusercontent.com/95487264/179221451-feef57fc-c35e-4a95-82b1-9dc460aae4dd.jpg)
+
