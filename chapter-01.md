@@ -19,3 +19,26 @@ docker run dockerinaction/hello_world
 
 Containers and isolation features have existed for decades. Docker uses Linux namespaces and cgroups, which have been part of Linux since 2007. Docker doesn’t provide the container technology, but it specifically makes it simpler to use. To understand what containers look like on a system, let’s first establish a baseline. Figure 1.3 shows a basic example running on a simplified computer system architecture.
 
+
+![image](https://user-images.githubusercontent.com/95487264/179342638-38273b18-d596-4825-9ac6-c003981f9892.png)
+ 
+Notice that the command-line interface, or CLI, runs in what is called user space memory, just like other programs that run on top of the operating system. Ideally, programs running in user space can’t modify kernel space memory. Broadly speaking, the operating system is the interface between all user programs and the hardware that the computer is running on.
+
+You can see in figure 1.4 that running Docker means running two programs in user space. The first is the Docker engine. If installed properly, this process should always be running. The second is the Docker CLI. This is the Docker program that users interact with. If you want to start, stop, or install software, you’ll issue a command by using the Docker program.
+
+![image](https://user-images.githubusercontent.com/95487264/179342658-9fde9222-c199-44b3-b0cd-040327bb8159.png)
+
+Figure 1.4 also shows three running containers. Each is running as a child process of the Docker engine, wrapped with a container, and the delegate process is running in its own memory subspace of the user space. Programs running inside a container can access only their own memory and resources as scoped by the container.
+
+Docker builds containers using 10 major system features. Part 1 of this book uses Docker commands to illustrate how these features can be modified to suit the needs of the contained software and to fit the environment where the container will run. The specific features are as follows:
+
+- PID namespace— Process identifiers and capabilities
+- UTS namespace— Host and domain name
+- MNT namespace— Filesystem access and structure
+- IPC namespace— Process communication over shared memory
+- NET namespace— Network access and structure
+- USR namespace— User names and identifiers
+- chroot syscall—Controls the location of the filesystem root
+- cgroups— Resource protection
+- CAP drop— Operating system feature restrictions
+- Security modules— Mandatory access controls
