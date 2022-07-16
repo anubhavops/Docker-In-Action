@@ -12,3 +12,10 @@ docker run dockerinaction/hello_world
 
 
 ![image](https://user-images.githubusercontent.com/95487264/179221609-5df74d96-8950-489e-aff8-add0f6b8e6ef.png)
+
+
+
+## Running software in containers for isolation 
+
+Containers and isolation features have existed for decades. Docker uses Linux namespaces and cgroups, which have been part of Linux since 2007. Docker doesn’t provide the container technology, but it specifically makes it simpler to use. To understand what containers look like on a system, let’s first establish a baseline. Figure 1.3 shows a basic example running on a simplified computer system architecture.
+
